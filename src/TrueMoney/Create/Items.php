@@ -1,11 +1,6 @@
 <?php
+namespace TrueMoneyWallet\Create;
 class Items {
-    
-	
-	
-	
-	
-	
 	function set_item_id($item_id) {
 		$this->item_id = $item_id;
 		return $this;
@@ -23,6 +18,10 @@ class Items {
 		$this->price = $price;
 		return $this;
     }
+	function set_shop_code($shop_code) {
+		$this->shop_code = $shop_code;
+		return $this;
+	}
     function set_details($details) {
 		$this->details = $details;
 		return $this;
@@ -35,4 +34,13 @@ class Items {
 		$this->reference = $ref;
 		return $this;
     }
+	function set_ref($refs) {
+		if (is_array($refs) && (count($refs) > 0)) {
+			foreach ($refs as $ke => $val) {
+				$this->$ke = $val;
+			}
+		}
+		unset($this->reference);
+		return $this;
+	}
 }
