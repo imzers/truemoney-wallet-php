@@ -1,4 +1,7 @@
 <?php
+
+namespace TrueMoneyWallet\Create;
+
 class BillingAddress {
     
 	
