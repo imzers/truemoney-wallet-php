@@ -8,12 +8,12 @@ class Request {
 	
 	
 
-	function create_api_execute($base_url, $post_field) {
+	function create_api_execute($base_url, $post_field, $post_timeout = 30) {
 		$this->set_method('POST');
 		$this->set_url($base_url);
 		$this->set_post_field($post_field);
 		$this->set_post_header($this->request_header);
-		$this->set_post_timeout(30);
+		$this->set_post_timeout($post_timeout);
 		$this->Execute = new Execute($this->method, $this->url, $this->post_header, $this->post_field, $this->post_timeout);
 		return $this;
 	}
