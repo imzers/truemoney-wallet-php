@@ -7,6 +7,8 @@ use TrueMoneyWallet\Create\SHA256;
 use TrueMoneyWallet\Create\Signature;
 use TrueMoneyWallet\Create\PaymentInfo;
 
+use TrueMoneyWallet\Api\Request;
+
 class TMN_Wallet {
 	protected $endpoint;
 	private $config;
@@ -114,6 +116,47 @@ class TMN_Wallet {
 			$this->payment_structure['signature'] = base64_encode($this->payment_structure['sha256']);
 		}
 	}
-  
-  
-  }
+	
+	function payment_request_create($params) {
+		$Request = new TrueMoneyWallet\Api\Request();
+		$Request->create_request_header(array('Authorization' => "Bearer {$this->config['client_token']}"));
+		$Request->create_api_execute($this->endpoint['api'], $params);
+		$payment = $Request->Execute->make_curl();
+		if (!$payment) {
+			return $Request;
+		}
+		return $payment;
+	}
+	
+	
+	private function create_curl_headers($params = null) {
+		$headers = array();
+		if (!isset($params)) {
+			$params['content-type'] = 'application/x-www-form-urlencoded';
+		}
+		if (is_array($params) && (count($params) > 0)) {
+			foreach ($params as $key => $val) {
+				$headers[] = "{$key}:{$val}";
+			}
+		}
+		return $headers;
+	}
+	private function getHeaders() {
+		$out = array();
+		foreach($_SERVER as $key => $value) {
+			if ((substr($key,0,5) == "HTTP_") && (isset($value))) {
+				$key = str_replace(" ","-", ucwords(strtolower(str_replace("_"," ",substr($key,5)))));
+				$out[$key] = $value;
+				}
+			}
+		return $out;
+	}
+	private function createHeaders($headers = array()) {
+		$curlheaders = array();
+		foreach ($headers as $ke => $val) {
+			$curlheaders[] = "{$ke}: {$val}";
+		}
+		return $curlheaders;
+	}
+	
+}	
