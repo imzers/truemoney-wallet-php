@@ -26,6 +26,10 @@ class Items {
 		$this->details = $details;
 		return $this;
     }
+	function set_detail($detail) {
+		$this->detail = $detail;
+		return $this;
+    }
     function set_reference($reference = array()) {
 		$ref = array();
 		$ref['ref1'] = (isset($reference['ref1']) ? $reference['ref1'] : '');
