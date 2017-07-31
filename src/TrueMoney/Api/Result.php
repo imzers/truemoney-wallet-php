@@ -13,8 +13,6 @@ class Result {
 		$this->Execute = new Execute($this->method, $this->url, $this->post_header, $this->post_field, $this->post_timeout);
 		return $this;
 	}
-	
-	
 	function create_request_header($params = NULL) {
 		$this->set_header('Content-Type', 'application/json');
 		if (isset($params)) {

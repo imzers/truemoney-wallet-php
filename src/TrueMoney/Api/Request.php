@@ -1,6 +1,5 @@
 <?php
 namespace TrueMoneyWallet\Api;
-
 use TrueMoneyWallet\Api\Execute;
 class Request {
 	public $request_header = array();
@@ -8,12 +7,12 @@ class Request {
 	
 	
 
-	function create_api_execute($base_url, $post_field, $post_timeout = 30) {
+	function create_api_execute($base_url, $path_url, $post_field) {
 		$this->set_method('POST');
-		$this->set_url($base_url);
+		$this->set_url($base_url, $path_url);
 		$this->set_post_field($post_field);
 		$this->set_post_header($this->request_header);
-		$this->set_post_timeout($post_timeout);
+		$this->set_post_timeout(30);
 		$this->Execute = new Execute($this->method, $this->url, $this->post_header, $this->post_field, $this->post_timeout);
 		return $this;
 	}
@@ -38,8 +37,12 @@ class Request {
 		$this->method = $method;
 		return $this;
 	}
-	function set_url($url) {
-		$this->url = "{$url}/payments/v1/payment";
+	function set_url($url, $url_path = '/payments/v1/payment') {
+		if (substr($url_path, 0, strlen('/')) === '/') {
+			$this->url = "{$url}{$url_path}";
+		} else {
+			$this->url = "{$url}/{$url_path}";
+		}
 		return $this;
 	}
 	function set_post_header($headers = null) {

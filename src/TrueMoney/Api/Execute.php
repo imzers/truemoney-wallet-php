@@ -16,10 +16,6 @@ class Execute {
 		$this->response = $this->create_curl_request($this->post_method, $this->post_url, 'TDP/Api.Context', $this->headers, $this->post_field, $this->post_timeout);
 		return $this->response;
 	}
-	
-	
-	
-	
 	public function collect_headers($headers = array()) {
 		$out = array();
 		if (count($headers) > 0) {
@@ -39,7 +35,7 @@ class Execute {
 	
 	## $this->create_curl_request('POST', 'http://server.tld/query', 'TDP/Api.Context', $headers = array(), $params = array(), $timeout = 30)
 	function create_curl_request($action, $url, $UA, $headers = null, $params = array(), $timeout = 30) {
-		$cookie = isset($_COOKIE) ? $_COOKIE : array();
+		$cookie_file = (dirname(__FILE__).'/cookies.txt');
 		$url = str_replace( "&amp;", "&", urldecode(trim($url)) );
 		$ch = curl_init();
 		switch (strtolower($action)) {
@@ -65,7 +61,8 @@ class Execute {
 		}
 		curl_setopt($ch, CURLOPT_USERAGENT, $UA);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		//curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie);
+		//curl_setopt($ch, CURLOPT_COOKIE, $cookie_file);
+		//curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($ch, CURLOPT_ENCODING, "");
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
@@ -121,25 +118,56 @@ class Execute {
 		$response = curl_exec($ch);
 		$mixed_info = curl_getinfo($ch);
 		$header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
-		$header = substr($response, 0, $header_size);
+		$header_string = substr($response, 0, $header_size);
+		$header_content = $this->get_headers_from_curl_response($header_string);
+		$header_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+		if (count($header_content) > 1) {
+			$header_content = end($header_content);
+		}
 		$body = substr($response, $header_size);
 		curl_close ($ch);
 		$return = array(
 			'request'		=> array(
-				'method'			=> "{$action}: {$url}",
+				'method'			=> $action,
+				'host'				=> $url,
 				'header'			=> $headers,
 				'body'				=> $post_fields,
 			),
 			'response'		=> array(),
 		);
 		if (!empty($response) || $response != '') {
-			$return['response']['header'] = array('size' => $header_size, 'content' => $header);
+			$return['response']['code'] = (int)$header_code;
+			$return['response']['header'] = array(
+				'size' => $header_size, 
+				'string' => $header_string,
+				'content' => $header_content,
+			);
 			$return['response']['body'] = $body;
 			return $return;
 		}
 		return false;
 	}
 	
+	
+	##################
+	private static function get_headers_from_curl_response($headerContent) {
+		$headers = array();
+		// Split the string on every "double" new line.
+		$arrRequests = explode("\r\n\r\n", $headerContent);
+		// Loop of response headers. The "count($arrRequests) - 1" is to 
+		// avoid an empty row for the extra line break before the body of the response.
+		for ($index = 0; $index < (count($arrRequests) - 1); $index++) {
+			foreach (explode("\r\n", $arrRequests[$index]) as $i => $line) {
+				if ($i === 0) {
+					$headers[$index]['http_code'] = $line;
+				} else {
+					list ($key, $value) = explode(': ', $line);
+					$headers[$index][$key] = $value;
+				}
+			}
+		}
+		return $headers;
+	}
 	private function createHeaders($headers = array()) {
 		$curlheaders = array();
 		foreach ($headers as $ke => $val) {
