@@ -40,18 +40,18 @@ function getApiContext($mode = 'sandbox') {
 	);
 	$ClientConfig = array(
 		'sandbox'		=> array(
-				'client_id' 		=> 'TMN_CLIENT_ID',
-				'client_secret' 	=> 'TMN_CLIENT_SECRET',
-				'client_token' 		=> 'TMN_CLIENT_TOKEN',
-				'client_shopcode'	=> 'TMN_CLIENT_SHOPCODE',
-				'client_appname'	=> 'TMN_CLIENT_APPNAME',
+				'client_id' 		=> 'TMN_CLIENT_ID', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_secret' 	=> 'TMN_CLIENT_SECRET', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_token' 		=> 'TMN_CLIENT_TOKEN', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_shopcode'	=> 'TMN_CLIENT_SHOPCODE', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_appname'	=> 'TMN_CLIENT_APPNAME', // You will get this from TMN-Wallet, Please contact TrueMoney
 		),
 		'live'			=> array(
-				'client_id' 		=> 'TMN_CLIENT_ID',
-				'client_secret' 	=> 'TMN_CLIENT_SECRET',
-				'client_token' 		=> 'TMN_CLIENT_TOKEN',
-				'client_shopcode'	=> 'TMN_CLIENT_SHOPCODE',
-				'client_appname'	=> 'TMN_CLIENT_APPNAME',
+				'client_id' 		=> 'TMN_CLIENT_ID', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_secret' 	=> 'TMN_CLIENT_SECRET', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_token' 		=> 'TMN_CLIENT_TOKEN', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_shopcode'	=> 'TMN_CLIENT_SHOPCODE', // You will get this from TMN-Wallet, Please contact TrueMoney
+				'client_appname'	=> 'TMN_CLIENT_APPNAME', // You will get this from TMN-Wallet, Please contact TrueMoney
 		),
 	);
 	$Redirect = array(
