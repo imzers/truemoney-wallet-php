@@ -1,5 +1,5 @@
 <?php
-namespa
+namespace TrueMoneyWallet\Utils;
 
 class Mac {
   protected $value;
