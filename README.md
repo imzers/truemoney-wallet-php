@@ -20,4 +20,4 @@ This Module have library you can use to:
 
 Further information about TrueMoney Wallet, please check on  [TrueMoney Website](https://www.truemoney.com/wallet)
 ### Demo ###
-- Chek our [Demo](https://market.myarenaonline.com)
+- Chek our [Demo](http://market.myarenaonline.com)
