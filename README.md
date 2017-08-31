@@ -18,6 +18,6 @@ This Module have library you can use to:
 #### NOTES ####
 * Please note that this TrueMoney Wallet payment modules should be support with  `composer.json`. You can modify it to integrated with Composer package 
 
-Further infornation about TrueMoney Wallet, please check on  [TrueMoney Website](https://www.truemoney.com/wallet)
+Further information about TrueMoney Wallet, please check on  [TrueMoney Website](https://www.truemoney.com/wallet)
 ### Demo ###
 - Chek our [Demo](https://market.myarenaonline.com)
