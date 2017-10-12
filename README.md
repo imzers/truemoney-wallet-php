@@ -13,7 +13,6 @@ This Module have library you can use to:
 ### Minimum Requirements ###
 
 - PHP version 5.4.x or greater
-- Apache 2.2
 
 #### NOTES ####
 * Please note that this TrueMoney Wallet payment modules should be support with  `composer.json`. You can modify it to integrated with Composer package 
