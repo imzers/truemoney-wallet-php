@@ -2,9 +2,11 @@
 //-----------------------------
 // Sample for creating payment
 //-----------------------------
-## Include config.php from doc-root
-include_once(dirname(dirname(__FILE__)) . '/config.php');
-#########################################################
+
+
+## Include bootstrap.php
+include_once(dirname(dirname(__FILE__)) . '/bootstrap.php');
+#############################################################
 
 
 
@@ -64,22 +66,37 @@ $QueryUser = array (
 //------------------
 // Build Postfiels
 //------------------
-
 $post_fields = array(
 	'merchant_service'		=> 'myarena',
 	'redirect'			=> $QueryRedirect,
 	'payment'			=> $QueryPayment,
 	'user'				=> $QueryUser,
 );
+//----------------------------------------
+echo "<pre>";
+print_r($TMN_Wallet);
+
+
+
+
+
+
+
+
+
+
+
 
 //--------
 // Make payment-structure
 //--------
+/*
 try {
 	$TMN_Wallet->payment_structure_create($post_fields['payment'], $post_fields['user'], 'tmn_wallet');
 } catch (Exception $ex) {
 	throw $ex;
 }
+*/
 
 
 
