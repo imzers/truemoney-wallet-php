@@ -2,6 +2,15 @@
 //-----------------------------
 // Sample for creating payment
 //-----------------------------
+## Include lib/TMN_Wallet.php
+include_once(dirname(dirname(__FILE__)) . '/lib/TMN_Wallet.php');
+$TMN_Wallet = new TMN_Wallet();
+
+
+
+
+
+
 ## Create Unique request_id for Transaction (Should be product_id from Merchant Shop)
 $DateObject = new TrueMoneyWallet\Utils\Datezone("Asia/Bangkok");
 $request_id = $DateObject->create_datetime_format("YmdHisu");
