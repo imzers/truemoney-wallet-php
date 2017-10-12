@@ -2,9 +2,9 @@
 //-----------------------------
 // Sample for creating payment
 //-----------------------------
-## Include lib/TMN_Wallet.php
-include_once(dirname(dirname(__FILE__)) . '/lib/TMN_Wallet.php');
-$TMN_Wallet = new TMN_Wallet();
+## Include config.php from doc-root
+include_once(dirname(dirname(__FILE__)) . '/config.php');
+#########################################################
 
 
 
