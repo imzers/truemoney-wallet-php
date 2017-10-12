@@ -58,11 +58,21 @@ $QueryUser = array (
 
 $post_fields = array(
 	'merchant_service'		=> 'myarena',
-	'redirect'				=> $QueryRedirect,
-	'payment'				=> $QueryPayment,
-	'user'					=> $QueryUser,
+	'redirect'			=> $QueryRedirect,
+	'payment'			=> $QueryPayment,
+	'user'				=> $QueryUser,
 );
-$post_fields_json = json_encode($post_fields, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+
+//--------
+// Make payment-structure
+//--------
+try {
+	$TMN_Wallet->payment_structure_create($post_fields['payment'], $post_fields['user'], 'tmn_wallet');
+} catch (Exception $ex) {
+	throw $ex;
+}
+
+
 
 
 
