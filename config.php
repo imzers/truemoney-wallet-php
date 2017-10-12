@@ -1,14 +1,15 @@
 <?php
-// SHow error reporting for debugging purpose
+// Show error reporting for debugging purpose
 error_reporting(E_ALL);
 ini_set('display_startup_errors', true);
 ini_set('display_errors', true);
 
 // Include necessary Lib
-if (!file_exists('constant.php')) {
+$contant_file = (dirname(__FILE__) . '/constant.php');
+if (!file_exists($contant_file)) {
   exit("File constant.php is required.");
 }
-include_once('constant.php');
+include_once($contant_file);
 ########################################################################################
 # Load TrueMoneyWallet Class
 require_once(ConstantConfig::THIS_SERVER_VHOST . "/lib/TMN_Wallet.php");
