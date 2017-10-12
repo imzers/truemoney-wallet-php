@@ -1,0 +1,28 @@
+{
+    "name": "imzers/TrueMoney-API",
+    "description": "TrueMoney Wallet PHP SDK for REST APIs",
+    "keywords": ["truemoney", "wallet", "payments", "rest", "sdk"],
+    "type": "library",
+    "license": "Apache-2.0",
+    "homepage": "http://https://github.com/imzers/TrueMoney-API",
+    "authors": [
+        {
+            "name": "imzers",
+            "homepage": "https://github.com/imzers/TrueMoney-API/contributors"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "ext-curl": "*",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "TrueMoneyWallet": "src/"
+        }
+    }
+}
