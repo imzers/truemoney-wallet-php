@@ -4,7 +4,7 @@
     "keywords": ["truemoney", "wallet", "payments", "rest", "sdk"],
     "type": "library",
     "license": "Apache-2.0",
-    "homepage": "http://https://github.com/imzers/TrueMoney-API",
+    "homepage": "https://github.com/imzers/TrueMoney-API",
     "authors": [
         {
             "name": "imzers",
