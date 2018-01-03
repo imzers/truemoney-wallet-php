@@ -2,7 +2,7 @@
     "name": "imzers/TrueMoney-API",
     "description": "TrueMoney Wallet PHP SDK for REST APIs",
     "keywords": ["truemoney", "wallet", "payments", "rest", "sdk"],
-    "type": "library",
+    "type": "git",
     "license": "Apache-2.0",
     "homepage": "https://github.com/imzers/truemoney-wallet-php",
     "authors": [
