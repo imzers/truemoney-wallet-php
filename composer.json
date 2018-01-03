@@ -4,11 +4,13 @@
     "keywords": ["truemoney", "wallet", "payments", "rest", "sdk"],
     "type": "library",
     "license": "Apache-2.0",
-    "homepage": "https://github.com/imzers/TrueMoney-API",
+    "homepage": "https://github.com/imzers/truemoney-wallet-php",
     "authors": [
         {
             "name": "imzers",
-            "homepage": "https://github.com/imzers/TrueMoney-API/contributors"
+            "homepage": "https://github.com/imzers/truemoney-wallet-php/contributors",
+            "role": "Original Maintainer",
+            "email": "imzers@gmail.com"
         }
     ],
     "require": {
