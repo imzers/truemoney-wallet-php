@@ -90,7 +90,7 @@ $htmlForm = "";
 	<link rel="stylesheet" href="/assets/stylesheets/cingular.css" type="text/css" />
 	-->
 </head>
-<body class="popup" onload="javascript:countRedirect();">
+<body class="popup">
 	<div class="container">	
 		<h4 class="waiting-text">
 			Please submit to make a payment test
@@ -98,7 +98,7 @@ $htmlForm = "";
 	</div>
 	<div class="waiting-text">
 		<form action="02-create-payment-process.php" method="post" enctype="application/x-www-form-urlencoded">
-			<textarea name="post_fields" rows="16" cols="80"><?php echo json_encode($post_fields, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?></textarea>
+			<textarea name="post_fields" rows="16" cols="80"><?php echo json_encode($post_fields, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?></textarea>
 			<p>Submit</p>
 			<p>
 				<input type="submit" value="Submit new payment" />
