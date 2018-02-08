@@ -33,13 +33,9 @@ class ConstantConfig {
 		return $base_url;
 	}
 	const PUBLIC_URL_PROTOCOL			= 'https';
-	const PUBLIC_URL_ADDRESS			= 'payment.your-domain.tld'; // Change domain of live or sandbox
-	const PUBLIC_URL_PATH				= '/payment/##method##/##transaction##';
+	const PUBLIC_URL_ADDRESS			= 'payment.mywebsitepayment.com'; // Change domain of live or sandbox
+	const PUBLIC_URL_PATH				= '/payment/##transaction##';
 	## Another constant you can put below:
 	
 	
 }
-
-
-
-
