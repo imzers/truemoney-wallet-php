@@ -13,6 +13,11 @@ class Payer {
 	function set_payer_info($payer_id, $email) {
 		$payer_data = array();
 		$payer_data['payer_id'] = (isset($payer_id) ? $payer_id : 1);
+		if (is_string($payer_data['payer_id']) || is_numeric($payer_data['payer_id'])) {
+			if ((strlen($payer_data['payer_id']) === 0) || empty($payer_data['payer_id'])) {
+				$payer_data['payer_id'] = '1';
+			}
+		}
 		$payer_data['email'] = (isset($email) ? $email : 'pay@himran.com');
 		$this->payer_info = $payer_data;
 		return $this;
