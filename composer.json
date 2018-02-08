@@ -13,13 +13,19 @@
             "email": "imzers@gmail.com"
         }
     ],
+	"repositories": [
+		{
+			"url": "https://github.com/imzers/truemoney-wallet-php.git",
+			"type": "git"
+		}
+	],
     "require": {
         "php": ">=5.4.0",
         "ext-curl": "*",
         "ext-json": "*"
     },
     "require-dev": {
-        "phpunit/phpunit": "3.7.*"
+        
     },
     "minimum-stability": "dev",
     "autoload": {
