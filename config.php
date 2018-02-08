@@ -12,7 +12,7 @@ if (!file_exists($contant_file)) {
 include_once($contant_file);
 ########################################################################################
 # Load TrueMoneyWallet Class
-require_once(ConstantConfig::THIS_SERVER_VHOST . "/lib/TMN_Wallet.php");
+require_once(ConstantConfig::root() . "/lib/TMN_Wallet.php");
 
 
 
@@ -101,6 +101,6 @@ function getApiContext($mode = 'sandbox') {
 }
 
 # Generate apiContext global variables
-$apiContext = getApiContext(ConstantConfig::THIS_SERVER_MODE);
+$apiContext = getApiContext(ConstantConfig::$THIS_SERVER_MODE);
 //$apiContext = getApiContext('live');
 $TMN_Wallet = new TMN_Wallet($apiContext);
