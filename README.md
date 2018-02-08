@@ -15,7 +15,7 @@ This Module have library you can use to:
 - PHP version 5.4.x or greater
 
 #### NOTES ####
-* Please note that this TrueMoney Wallet payment modules should be support with  `composer.json`. You can modify it to integrated with Composer package 
+* Please note: To test payment in sandbox mode (Test Server Environment), you should do it on Bangkok Office Hour: Monday to Friday on (09.00 AM to 17.00 PM) because Truemoney Wallet turning down test-server service, including on weekend and holliday
 
 Further information about TrueMoney Wallet, please check on  [TrueMoney Website](https://www.truemoney.com/wallet)
 ### Demo ###
