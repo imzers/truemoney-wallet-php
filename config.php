@@ -20,21 +20,13 @@ function getApiContext($mode = 'sandbox') {
 	$ClientPoint = Array(
 		'sandbox'		=> array(
 				'api'			=> 'https://api-payment.tmn-dev.com',
-				'api_ip'		=> array(
-					'https://52.76.176.237',
-					'https://52.74.215.200',
-					'https://52.74.69.190',
-					'https://54.169.242.66',
-				),
+				'api_ip'		=> array(),
 				'transfer'		=> 'https://api-payment-transfer.tmn-dev.com',
 				'cdn'			=> 'https://cdn.tmn-dev.com',
 		),
 		'live'			=> array(
 				'api'			=> 'https://api-payment.truemoney.com',
-				'api_ip'		=> array(
-					'https://54.254.160.104',
-					'https://54.255.160.127',
-				),
+				'api_ip'		=> array(),
 				'transfer'		=> 'https://api-payment-transfer.truemoney.com',
 				'cdn'			=> 'https://cdn.truemoney.com',
 		),
