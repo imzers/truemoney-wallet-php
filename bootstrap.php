@@ -2,7 +2,7 @@
 //-------
 // Please specify your composer dir
 //-------
-$composer_dir = $_SERVER['DOCUMENT_ROOT']; // Or your composer default dir
+$composer_dir = dirname(__FILE__); // Or your composer default dir
 
 
 
