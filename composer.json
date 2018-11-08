@@ -1,5 +1,5 @@
 {
-    "name": "imzers/TrueMoney-API",
+    "name": "imzers/truemoney-wallet-php",
     "description": "TrueMoney Wallet PHP SDK for REST APIs",
     "keywords": ["truemoney", "wallet", "payments", "rest", "sdk"],
     "type": "git",
