@@ -1,18 +1,24 @@
 {
     "name": "imzers/truemoney-wallet-php",
-    "version": "1.0.0",
     "description": "TrueMoney Wallet PHP SDK for REST APIs",
 	"keywords": ["truemoney", "wallet", "payments", "rest", "sdk"],
 	"homepage": "https://github.com/imzers/truemoney-wallet-php",
-    "type": "library",
+    "type": "git",
 	"authors": [
         {
-            "name": "imzers",
-            "role": "Original Maintainer",
+            "name": "Imran Nababan",
+            "role": "Creator",
             "email": "imzers@gmail.com"
         }
     ],
+	"repositories": [
+		{
+			"url": "https://github.com/imzers/truemoney-wallet-php.git",
+			"type": "git"
+		}
+	],
     "require": {
+		"php": ">=5.4.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-openssl": "*"
@@ -21,5 +27,10 @@
         
     },
     "license": "Apache-2.0",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+	"autoload": {
+        "psr-0": {
+            "TrueMoneyWallet": "src/"
+        }
+	}
 }
