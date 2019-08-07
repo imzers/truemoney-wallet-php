@@ -10,7 +10,7 @@
             "role": "Original Maintainer",
             "email": "imzers@gmail.com"
         }
-    ]
+    ],
     "require": {
         "ext-curl": "^7.0",
         "ext-json": "^1.4",
