@@ -13,10 +13,9 @@
         }
     ],
     "require": {
-        "ext-curl": "^7.0",
-        "ext-json": "^1.4",
-        "php": "5.6",
-        "ext-openssl": "^7.0"
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-openssl": "*"
     },
     "require-dev": {
         "php": "^7.0"
